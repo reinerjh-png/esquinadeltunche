@@ -1,0 +1,24 @@
+{
+  "name": "La Esquina del Tunche",
+  "short_name": "Tunche",
+  "description": "Carta digital — Cocina amazónica y marina peruana en Tingo María",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A1A10",
+  "theme_color": "#0A1A10",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/img/logo.webp",
+      "sizes": "192x192",
+      "type": "image/webp"
+    },
+    {
+      "src": "/img/logo.webp",
+      "sizes": "512x512",
+      "type": "image/webp"
+    }
+  ],
+  "lang": "es-PE",
+  "categories": ["food", "lifestyle"]
+}
