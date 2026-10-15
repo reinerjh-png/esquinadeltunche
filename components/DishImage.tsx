@@ -9,27 +9,55 @@ type DishImageProps = {
   className?: string;
   priority?: boolean;
   fill?: boolean;
-  type?: "desayunos" | "pescados-mariscos" | "de-la-casa" | "salteados-wok" | "pastas-grill" | "del-barrio" | "poke-bowls";
+  type?:
+    | "desayunos"
+    | "poke-bowls"
+    | "pescados-mariscos"
+    | "de-la-casa"
+    | "salteados-wok"
+    | "pastas-grill"
+    | "alitas"
+    | "hamburguesas"
+    | "salchipapas"
+    | "jugos"
+    | "bebidas"
+    | "frozen"
+    | "fresh-tea"
+    | "frappes";
 };
 
 const categoryGradients: Record<string, string> = {
   "desayunos":        "from-amber-900/80 to-yellow-900/60",
+  "poke-bowls":       "from-teal-900/80 to-cyan-900/60",
   "pescados-mariscos":"from-blue-900/80 to-cyan-900/60",
   "de-la-casa":       "from-green-900/80 to-emerald-900/60",
   "salteados-wok":    "from-orange-900/80 to-red-900/60",
   "pastas-grill":     "from-red-900/80 to-orange-900/60",
-  "del-barrio":       "from-yellow-900/80 to-amber-900/60",
-  "poke-bowls":       "from-teal-900/80 to-cyan-900/60",
+  "alitas":           "from-amber-900/80 to-red-900/60",
+  "hamburguesas":     "from-yellow-900/80 to-orange-900/60",
+  "salchipapas":      "from-orange-900/80 to-amber-900/60",
+  "jugos":            "from-emerald-900/80 to-lime-900/60",
+  "bebidas":          "from-purple-900/80 to-indigo-900/60",
+  "frozen":           "from-cyan-900/80 to-blue-900/60",
+  "fresh-tea":        "from-green-900/80 to-teal-900/60",
+  "frappes":          "from-amber-950/80 to-stone-900/60",
 };
 
 const categoryIcons: Record<string, string> = {
   "desayunos":        "🌿",
+  "poke-bowls":       "🥗",
   "pescados-mariscos":"🐟",
   "de-la-casa":       "🌿",
   "salteados-wok":    "🔥",
   "pastas-grill":     "🍝",
-  "del-barrio":       "🍗",
-  "poke-bowls":       "🥗",
+  "alitas":           "🍗",
+  "hamburguesas":     "🍔",
+  "salchipapas":      "🍟",
+  "jugos":            "🥤",
+  "bebidas":          "🍹",
+  "frozen":           "🍧",
+  "fresh-tea":        "🍃",
+  "frappes":          "☕",
 };
 
 export default function DishImage({ src, alt, className = "", priority = false, fill = false, type }: DishImageProps) {

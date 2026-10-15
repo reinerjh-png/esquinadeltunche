@@ -35,7 +35,7 @@ export type Category = {
 };
 
 export const menu: Category[] = [
-  // ─── DESAYUNOS ────────────────────────────────────────────────────────────
+  // ─── 1. DESAYUNOS ──────────────────────────────────────────────────────────
   {
     id: "desayunos",
     name: "Desayunos",
@@ -45,7 +45,7 @@ export const menu: Category[] = [
       {
         id: "combito-del-tunche",
         name: "Combito del Tunche",
-        description: "Tacacho con juanecito y tu proteína a elegir: cecina ahumada, chorizo artesanal o chicharrón.",
+        description: "Tacacho y juanecito con cecina ahumada, chorizo artesanal o chicharrón.",
         price: 15,
         image: "/img/dishes/combito-del-tunche.jpg",
         tags: ["recomendado", "amazonico"],
@@ -62,26 +62,35 @@ export const menu: Category[] = [
       {
         id: "juanecito",
         name: "Juanecito",
-        description: "Tamal amazónico de arroz con cecina, envuelto en hoja de bijao y cocido a vapor. Sabor auténtico de la selva.",
+        description: "Tamal amazónico de arroz con cecina, envuelto en hoja de bijao y cocido a vapor.",
         price: 5,
         tags: ["amazonico"],
       },
       {
-        id: "tacacho-amazonico",
-        name: "Tacacho amazónico",
-        description: "Plátano verde majado con manteca y la proteína regional que prefieras.",
+        id: "tacacho-chicharron",
+        name: "Tacacho con chicharrón",
+        description: "Plátano verde majado con manteca y chicharrón regional crocante.",
+        price: 16,
+        tags: ["amazonico"],
+      },
+      {
+        id: "tacacho-cecina",
+        name: "Tacacho con cecina",
+        description: "Plátano verde majado con manteca y auténtica cecina ahumada de la selva.",
         price: 14,
         tags: ["amazonico"],
-        variants: [
-          { id: "cecina", name: "Con cecina", price: 14 },
-          { id: "chorizo", name: "Con chorizo", price: 14 },
-          { id: "chicharron", name: "Con chicharrón", price: 16 },
-        ],
+      },
+      {
+        id: "tacacho-chorizo",
+        name: "Tacacho con chorizo",
+        description: "Plátano verde majado con manteca y chorizo artesanal regional.",
+        price: 14,
+        tags: ["amazonico"],
       },
       {
         id: "tacacho-combinado",
         name: "Tacacho combinado",
-        description: "Tacacho con 2 presas a elección entre cecina, chorizo y chicharrón.",
+        description: "Dos presas a elección.",
         price: 18,
         tags: ["amazonico"],
         options: [
@@ -97,7 +106,7 @@ export const menu: Category[] = [
       {
         id: "tacacho-mixto",
         name: "Tacacho mixto",
-        description: "La versión completa: tacacho con 3 presas a elección. Para el hambre de la selva.",
+        description: "Tres presas.",
         price: 22,
         tags: ["amazonico"],
         options: [
@@ -113,18 +122,17 @@ export const menu: Category[] = [
     ],
   },
 
-  // ─── POKÉ BOWLS ───────────────────────────────────────────────────────────
+  // ─── 2. POKÉ BOWLS ────────────────────────────────────────────────────────
   {
     id: "poke-bowls",
     name: "Poké Bowls",
     icon: "🥗",
     subtitle: "Frescos, ligeros y armados a tu gusto",
-    note: "Arma tu bowl a tu gusto — ingredientes y opciones se actualizarán pronto.",
     dishes: [
       {
         id: "poke-bowl",
-        name: "Poké Bowl \"Arma el tuyo\"",
-        description: "Crea tu bowl personalizado eligiendo base, proteína, toppings y salsa al gusto.",
+        name: "Poké Bowl",
+        description: "Ármalo a tu gusto.",
         price: 16,
         tags: ["nuevo", "marino"],
         options: [
@@ -161,7 +169,7 @@ export const menu: Category[] = [
     ],
   },
 
-  // ─── PESCADOS Y MARISCOS ──────────────────────────────────────────────────
+  // ─── 3. PESCADOS Y MARISCOS ───────────────────────────────────────────────
   {
     id: "pescados-mariscos",
     name: "Pescados y Mariscos",
@@ -171,70 +179,70 @@ export const menu: Category[] = [
       {
         id: "leche-de-tigre",
         name: "Leche de tigre carretillero",
-        description: "Cremosa leche de tigre con trozos de pescado fresco y crujiente chicharrón de pota.",
+        description: "Cremosa, con pescado y chicharrón de pota.",
         price: 20,
         tags: ["marino", "picante"],
       },
       {
         id: "ceviche-barrio",
         name: "Ceviche de barrio",
-        description: "Ceviche de pescado con crocante chicharrón de pota, ají amarillo y cebolla morada.",
+        description: "Ceviche de pescado acompañado de chicharrón de pota crocante.",
         price: 24,
         tags: ["marino"],
       },
       {
         id: "causa-de-tigre",
         name: "Causa de tigre",
-        description: "Causa rellena con leche de tigre y chicharrón de pota. Fusión limeña con alma marina.",
+        description: "Causa rellena con leche de tigre y chicharrón de pota.",
         price: 22,
         tags: ["marino"],
       },
       {
         id: "causa-acevichada",
         name: "Causa acevichada",
-        description: "Causa rellena de palta acompañada de ceviche de pescado fresco al limón.",
+        description: "Causa rellena de palta, acompañada de ceviche de pescado.",
         price: 24,
         tags: ["marino"],
       },
       {
         id: "causa-langostinos",
         name: "Causa de langostinos",
-        description: "Roll de causa con langostinos frescos, salsa golf y cremosa palta.",
+        description: "Roll de causa con langostinos, salsa golf y palta.",
         price: 25,
         tags: ["marino"],
       },
       {
         id: "arroz-mariscos",
         name: "Arroz con mariscos",
-        description: "Cremoso arroz con mistura marina y salsa criolla. El mar en cada cucharada.",
+        description: "Arroz cremoso con mixtura marina y zarza criolla.",
         price: 25,
         tags: ["marino"],
       },
       {
         id: "chaufa-mariscos",
         name: "Chaufa de mariscos",
-        description: "Arroz frito al wok con mistura marina y maduros fritos. Fusión chifa y mar.",
+        description: "Arroz frito con mixtura marina y maduros fritos.",
         price: 22,
         tags: ["marino"],
       },
       {
         id: "chaufa-langostinos",
         name: "Chaufa de langostinos",
-        description: "Arroz frito al wok con langostinos y maduros fritos. Sabor intenso y perfumado.",
+        description: "Arroz frito con langostinos y maduros fritos.",
         price: 25,
         tags: ["marino"],
       },
       {
         id: "chicharron-pescado",
         name: "Chicharrón de pescado",
-        description: "Pesca del día crocante, con yucas fritas, chifles dorados y salsa criolla.",
+        description: "Pesca del día crocante, con yucas fritas, chifles y zarza criolla.",
         price: 25,
         tags: ["marino"],
       },
       {
         id: "jalea-mixta",
         name: "Jalea mixta",
-        description: "Pesca del día y mistura marina crocante, con yucas fritas, chifles y salsa criolla.",
+        description: "Pesca del día y mixtura marina crocantes, con yucas fritas, chifles y zarza criolla.",
         price: 30,
         image: "/img/dishes/jalea-mixta.jpg",
         tags: ["marino", "recomendado"],
@@ -242,24 +250,25 @@ export const menu: Category[] = [
       {
         id: "chicharron-pota",
         name: "Chicharrón de pota",
-        description: "Crocante de pota dorada, con yucas fritas y salsa criolla de la casa.",
+        description: "Pota crocante servida con yucas fritas y zarza criolla.",
         price: 15,
         tags: ["marino"],
       },
       {
         id: "duo-marino",
         name: "Dúo marino",
-        description: "Elige 2 opciones del combo marino para compartir o disfrutar solo.",
+        description: "Elige exactamente 2 alternativas del combo marino.",
         price: 30,
         tags: ["marino"],
         options: [
           {
             id: "opciones",
-            label: "Elige 2 opciones",
+            label: "Elige 2 alternativas",
             choices: [
               "Chicharrón de pota",
               "Chicharrón de pescado",
               "Chaufa de mariscos",
+              "Aeropuerto de mariscos",
               "Arroz con mariscos",
               "Causa rellena",
               "Ceviche clásico",
@@ -273,17 +282,18 @@ export const menu: Category[] = [
       {
         id: "trio-marino",
         name: "Trío marino",
-        description: "Elige 3 opciones del combo marino. La experiencia completa del mar peruano.",
+        description: "Elige exactamente 3 alternativas del combo marino.",
         price: 40,
         tags: ["marino"],
         options: [
           {
             id: "opciones",
-            label: "Elige 3 opciones",
+            label: "Elige 3 alternativas",
             choices: [
               "Chicharrón de pota",
               "Chicharrón de pescado",
               "Chaufa de mariscos",
+              "Aeropuerto de mariscos",
               "Arroz con mariscos",
               "Causa rellena",
               "Ceviche clásico",
@@ -297,7 +307,7 @@ export const menu: Category[] = [
     ],
   },
 
-  // ─── DE LA CASA ───────────────────────────────────────────────────────────
+  // ─── 4. DE LA CASA ────────────────────────────────────────────────────────
   {
     id: "de-la-casa",
     name: "De la Casa",
@@ -307,7 +317,7 @@ export const menu: Category[] = [
       {
         id: "chaufa-del-tunche",
         name: "Chaufa del Tunche",
-        description: "Arroz frito con cecina ahumada, chorizo artesanal, langostinos y un toque de mishquina.",
+        description: "Arroz frito con cecina ahumada, chorizo artesanal, langostinos y toque de mishquina.",
         price: 25,
         image: "/img/dishes/chaufa-del-tunche.jpg",
         tags: ["recomendado", "amazonico"],
@@ -315,21 +325,21 @@ export const menu: Category[] = [
       {
         id: "fetuccini-del-tunche",
         name: "Fetuccini del Tunche",
-        description: "Cecina ahumada, chorizo artesanal y langostinos en salsa de la casa sobre fetuccini al dente.",
+        description: "Cecina ahumada, chorizo artesanal y langostinos en salsa de la casa.",
         price: 25,
         tags: ["amazonico"],
       },
       {
         id: "saltado-del-tunche",
         name: "Saltado del Tunche",
-        description: "Cecina ahumada y langostinos flameados al wok, con yucas fritas y patacones dorados.",
+        description: "Cecina ahumada y langostinos flameados, acompañados de yucas fritas y patacones.",
         price: 25,
         tags: ["amazonico", "marino"],
       },
       {
         id: "saltado-amazonico",
         name: "Saltado amazónico",
-        description: "Cecina ahumada y chorizo regional flameados al wok, con patacones y yucas fritas.",
+        description: "Cecina ahumada y chorizo regional flameados al wok, acompañados de patacones y yucas fritas.",
         price: 25,
         image: "/img/dishes/saltado-amazonico.jpg",
         tags: ["recomendado", "amazonico"],
@@ -337,7 +347,7 @@ export const menu: Category[] = [
       {
         id: "ceviche-del-tunche",
         name: "Ceviche del Tunche",
-        description: "Pesca local con limón mandarina y leche de tigre amazónica, con yucas fritas y chicharrón de pescado.",
+        description: "Pesca local con limón mandarina y leche de tigre amazónica, acompañada de yucas fritas y trozos de chicharrón de pescado.",
         price: 30,
         image: "/img/dishes/ceviche-del-tunche.jpg",
         tags: ["recomendado", "marino", "amazonico"],
@@ -345,13 +355,13 @@ export const menu: Category[] = [
       {
         id: "costillas-bbq",
         name: "Costillas BBQ",
-        description: "Costillas de cerdo ahumadas bañadas en salsa BBQ de la casa, con papas nativas doradas.",
+        description: "Costillas ahumadas en salsa BBQ, acompañadas de papas nativas.",
         price: 28,
       },
       {
         id: "costillas-maracuya",
         name: "Costillas en miel de maracuyá",
-        description: "Costillas ahumadas en salsa de miel de maracuyá, caramelizadas al horno, con papas nativas.",
+        description: "Costillas ahumadas en salsa de miel de maracuyá, acompañadas de papas nativas.",
         price: 28,
         image: "/img/dishes/costillas-maracuya.jpg",
         tags: ["recomendado"],
@@ -359,7 +369,7 @@ export const menu: Category[] = [
     ],
   },
 
-  // ─── SALTEADOS AL WOK ─────────────────────────────────────────────────────
+  // ─── 5. SALTEADOS AL WOK ──────────────────────────────────────────────────
   {
     id: "salteados-wok",
     name: "Salteados al Wok",
@@ -369,56 +379,64 @@ export const menu: Category[] = [
       {
         id: "lomo-saltado",
         name: "Lomo saltado",
-        description: "200 g de lomo fino salteado con cebolla, tomate y ají amarillo, con papas fritas y arroz.",
+        description: "200 gramos de lomo fino.",
         price: 35,
       },
       {
-        id: "tallarines-lomo",
+        id: "tallarines-saltados-lomo-fino",
         name: "Tallarines saltados de lomo fino",
-        description: "Tallarines salteados al wok con lomo fino, verduras crujientes y salsa de soya.",
+        description: "Lomo fino flameado al wok con verduras crujientes y tallarines.",
         price: 35,
       },
       {
-        id: "tallarines-pollo",
+        id: "tallarines-saltados-pollo",
         name: "Tallarines saltados de pollo",
-        description: "Tallarines salteados al wok con pechuga de pollo, verduras y toque de jengibre.",
+        description: "Pechuga de pollo flameada al wok con verduras y tallarines.",
         price: 22,
       },
       {
         id: "saltado-pollo",
         name: "Saltado de pollo",
-        description: "Pollo saltado con cebolla, tomate y ají amarillo, servido con papas fritas y arroz.",
+        description: "Trozos de pechuga salteados con cebolla, tomate y ají, servidos con papas y arroz.",
         price: 22,
       },
       {
-        id: "chaufa-clasico",
-        name: "Chaufa",
-        description: "Arroz frito al wok con huevo, cebollita china y la proteína que prefieras.",
+        id: "chaufa-pollo",
+        name: "Chaufa de pollo",
+        description: "Arroz frito al wok con pollo, cebollita china y huevo.",
         price: 17,
-        variants: [
-          { id: "pollo", name: "De pollo", price: 17 },
-          { id: "cecina", name: "De cecina", price: 20 },
-          { id: "chancho", name: "De chancho", price: 20 },
-        ],
       },
       {
         id: "chaufa-amazonico",
         name: "Chaufa amazónico",
-        description: "Arroz frito con cecina ahumada, chorizo artesanal y chicharrón. Sabores de la selva en un wok.",
+        description: "Cecina ahumada, chorizo artesanal y chicharrón.",
         price: 22,
         tags: ["amazonico"],
       },
       {
+        id: "chaufa-cecina",
+        name: "Chaufa de cecina",
+        description: "Arroz frito al wok con cecina ahumada de la selva.",
+        price: 20,
+        tags: ["amazonico"],
+      },
+      {
+        id: "chaufa-chancho",
+        name: "Chaufa de chancho",
+        description: "Arroz frito al wok con chancho asado y sazón oriental.",
+        price: 20,
+      },
+      {
         id: "chaufa-mar-selva",
         name: "Chaufa mar y selva",
-        description: "Lo mejor del mar y la selva en un wok: mariscos y cecina ahumada con arroz frito.",
+        description: "Mixtura marina y cecina ahumada salteadas al wok con arroz frito.",
         price: 25,
         tags: ["marino", "amazonico"],
       },
     ],
   },
 
-  // ─── PASTAS Y AL GRILL ────────────────────────────────────────────────────
+  // ─── 6. PASTAS Y AL GRILL ─────────────────────────────────────────────────
   {
     id: "pastas-grill",
     name: "Pastas y al Grill",
@@ -426,27 +444,52 @@ export const menu: Category[] = [
     subtitle: "Pastas cremosas y carnes a la parrilla",
     dishes: [
       {
-        id: "fetuccini-alfredo",
-        name: "Fetuccini Alfredo",
-        description: "Fetuccini al dente en cremosa salsa Alfredo. Elige tu acompañamiento.",
+        id: "fetuccini-alfredo-clasico",
+        name: "Fetuccini Alfredo clásico",
+        description: "Fetuccini al dente en cremosa salsa Alfredo tradicional.",
         price: 20,
-        variants: [
-          { id: "clasico", name: "Clásico", price: 20 },
-          { id: "pechuga", name: "Con pechuga al grill", price: 25 },
-          { id: "brochetas", name: "Con brochetas de pollo", price: 25 },
-          { id: "lomo", name: "Con lomo fino al grill", price: 37 },
-        ],
       },
       {
-        id: "fetuccini-huancaina",
-        name: "Fetuccini a la Huancaína",
-        description: "Fetuccini en cremosa salsa huancaína. Elige tu acompañamiento.",
+        id: "fetuccini-alfredo-pechuga",
+        name: "Fetuccini Alfredo con pechuga al grill",
+        description: "Fetuccini en salsa Alfredo acompañado de jugosa pechuga al grill.",
         price: 25,
-        variants: [
-          { id: "pechuga", name: "Con pechuga al grill", price: 25 },
-          { id: "brochetas", name: "Con brochetas de pollo", price: 26 },
-          { id: "lomo", name: "Con lomo fino al grill", price: 37 },
-        ],
+      },
+      {
+        id: "fetuccini-alfredo-brochetas",
+        name: "Fetuccini Alfredo con brochetas de pollo",
+        description: "Fetuccini en salsa Alfredo con brochetas de pollo marinado.",
+        price: 25,
+      },
+      {
+        id: "fetuccini-alfredo-lomo",
+        name: "Fetuccini Alfredo con lomo fino al grill",
+        description: "Fetuccini en salsa Alfredo con corte selecto de lomo fino al grill.",
+        price: 37,
+      },
+      {
+        id: "fetuccini-huancaina-pechuga",
+        name: "Fetuccini a la huancaína con pechuga al grill",
+        description: "Fetuccini en salsa huancaína cremosa con pechuga de pollo al grill.",
+        price: 25,
+      },
+      {
+        id: "fetuccini-huancaina-brochetas",
+        name: "Fetuccini a la huancaína con brochetas de pollo",
+        description: "Fetuccini en salsa huancaína cremosa con brochetas de pollo a la plancha.",
+        price: 26,
+      },
+      {
+        id: "fetuccini-huancaina-lomo",
+        name: "Fetuccini a la huancaína con lomo fino al grill",
+        description: "Fetuccini en salsa huancaína cremosa acompañado de lomo fino al grill.",
+        price: 37,
+      },
+      {
+        id: "fetuccini-huancaina-lomo-saltado",
+        name: "Fetuccini a la huancaína con lomo saltado",
+        description: "Fetuccini en salsa huancaína con jugoso lomo fino flameado al wok.",
+        price: 37,
       },
       {
         id: "pechuga-grill",
@@ -469,25 +512,31 @@ export const menu: Category[] = [
     ],
   },
 
-  // ─── DEL BARRIO ───────────────────────────────────────────────────────────
+  // ─── 7. ALITAS ────────────────────────────────────────────────────────────
   {
-    id: "del-barrio",
-    name: "Del Barrio",
+    id: "alitas",
+    name: "Alitas",
     icon: "🍗",
-    subtitle: "Antojos contundentes para compartir",
+    subtitle: "Crocantes alitas con tus salsas favoritas",
     dishes: [
-      // ALITAS
       {
         id: "alitas-personal",
-        name: "Alitas Personal",
-        description: "6 alitas crocantes con 1 solo sabor a elegir. Perfectas para picar.",
+        name: "Alitas personal",
+        description: "6 unidades con un solo sabor a elegir.",
         price: 20,
-        tags: ["nuevo"],
         options: [
           {
             id: "sabor",
             label: "Elige 1 sabor",
-            choices: ["Lemon Nikkei", "Acevichadas", "BBQ", "Maracuyá", "Mango hot", "Crispi", "Anticucheras"],
+            choices: [
+              "Lemon Nikkei",
+              "Acevichadas",
+              "BBQ",
+              "Maracuyá",
+              "Mango Hot",
+              "Crispi",
+              "Anticucheras",
+            ],
             min: 1,
             max: 1,
           },
@@ -495,51 +544,433 @@ export const menu: Category[] = [
       },
       {
         id: "alitas-para-picar",
-        name: "Alitas Para picar",
-        description: "12 alitas con hasta 3 sabores a elegir. La opción ideal para compartir.",
+        name: "Alitas para picar",
+        description: "12 unidades con hasta tres sabores a elegir.",
         price: 35,
         tags: ["recomendado"],
         options: [
           {
             id: "sabores",
             label: "Elige hasta 3 sabores",
-            choices: ["Lemon Nikkei", "Acevichadas", "BBQ", "Maracuyá", "Mango hot", "Crispi", "Anticucheras"],
+            choices: [
+              "Lemon Nikkei",
+              "Acevichadas",
+              "BBQ",
+              "Maracuyá",
+              "Mango Hot",
+              "Crispi",
+              "Anticucheras",
+            ],
             min: 1,
             max: 3,
           },
         ],
       },
-      // HAMBURGUESAS
+    ],
+  },
+
+  // ─── 8. HAMBURGUESAS ──────────────────────────────────────────────────────
+  {
+    id: "hamburguesas",
+    name: "Hamburguesas",
+    icon: "🍔",
+    subtitle: "En pan artesanal, preparadas al momento",
+    dishes: [
       {
-        id: "hamburguesas",
-        name: "Hamburguesas",
-        description: "Elige tu favorita, preparada al momento y servida en pan artesanal.",
-        price: 15,
-        variants: [
-          { id: "clasica", name: "Clásica", price: 16 },
-          { id: "doble", name: "Doble", price: 27 },
-          { id: "palteada", name: "Palteada", price: 17 },
-          { id: "hawaiana", name: "Hawaiana", price: 18 },
-          { id: "a-lo-pobre", name: "A lo pobre", price: 18 },
-          { id: "crispi", name: "Crispi", price: 15 },
-        ],
-      },
-      // SALCHIPAPAS
-      {
-        id: "salchipapas",
-        name: "Salchipapas",
-        description: "Papas nativas doradas con la combinación que más te provoque.",
+        id: "hamburguesa-clasica",
+        name: "Clásica",
+        description: "Hamburguesa artesanal clásica en pan artesanal con vegetales frescos y salsas.",
         price: 16,
+      },
+      {
+        id: "hamburguesa-doble",
+        name: "Doble",
+        description: "Doble carne artesanal con queso derretido en pan artesanal.",
+        price: 27,
+      },
+      {
+        id: "hamburguesa-palteada",
+        name: "Palteada",
+        description: "Hamburguesa artesanal con láminas de palta fresca.",
+        price: 17,
+      },
+      {
+        id: "hamburguesa-hawaiana",
+        name: "Hawaiana",
+        description: "Hamburguesa artesanal con piña caramelizada al grill y queso derretido.",
+        price: 18,
+      },
+      {
+        id: "hamburguesa-a-lo-pobre",
+        name: "A lo pobre",
+        description: "Hamburguesa artesanal con plátano maduro frito y huevo montado.",
+        price: 18,
+      },
+      {
+        id: "hamburguesa-crispi",
+        name: "Crispi",
+        description: "Pollo crocante extra crujiente con lechuga fresca y salsas.",
+        price: 15,
+      },
+    ],
+  },
+
+  // ─── 9. SALCHIPAPAS ───────────────────────────────────────────────────────
+  {
+    id: "salchipapas",
+    name: "Salchipapas",
+    icon: "🍟",
+    subtitle: "Papas nativas doradas con la combinación que más te provoque",
+    dishes: [
+      {
+        id: "salchipapa-clasica",
+        name: "Clásica",
+        description: "Salchichas arrebozadas con huevo, servidas con papas nativas.",
+        price: 16,
+      },
+      {
+        id: "salchipapa-parrillera",
+        name: "Parrillera",
+        description: "Chorizo arrebozado con huevos, servido con papas nativas y trozos de pollo al grill.",
+        price: 18,
+      },
+      {
+        id: "salchipapa-amazonica",
+        name: "Amazónica",
+        description: "Cecina ahumada y chorizo artesanal arrebozados, servidos con papas nativas.",
+        price: 20,
         tags: ["amazonico"],
-        variants: [
-          { id: "clasica", name: "Clásica", price: 16 },
-          { id: "parrillera", name: "Parrillera", price: 18 },
-          { id: "amazonica", name: "Amazónica", price: 20 },
-          { id: "crispi", name: "Crispi Chicken", price: 18 },
-        ],
+      },
+      {
+        id: "salchipapa-crispi",
+        name: "Crispi Chicken",
+        description: "Salchichas arrebozadas con huevo y pollo crocante.",
+        price: 18,
+      },
+    ],
+  },
+
+  // ─── 10. JUGOS ────────────────────────────────────────────────────────────
+  {
+    id: "jugos",
+    name: "Jugos",
+    icon: "🥤",
+    subtitle: "Frutas naturales y combinaciones con leche",
+    dishes: [
+      {
+        id: "jugo-papaya",
+        name: "Papaya",
+        description: "Jugo natural de papaya fresca.",
+        price: 6,
+      },
+      {
+        id: "jugo-pina",
+        name: "Piña",
+        description: "Jugo natural de piña fresca.",
+        price: 6,
+      },
+      {
+        id: "jugo-mango",
+        name: "Mango",
+        description: "Jugo natural de mango fresco.",
+        price: 7,
+      },
+      {
+        id: "jugo-surtido",
+        name: "Surtido",
+        description: "Clásica mezcla surtida de frutas frescas.",
+        price: 7,
+      },
+      {
+        id: "jugo-platano-leche",
+        name: "Plátano con leche",
+        description: "Batido cremoso de plátano con leche.",
+        price: 7,
+      },
+      {
+        id: "jugo-especial",
+        name: "Especial",
+        description: "Jugo especial con frutas selectas y leche.",
+        price: 8,
+      },
+      {
+        id: "jugo-papaya-leche",
+        name: "Papaya con leche",
+        description: "Batido cremoso de papaya con leche.",
+        price: 8,
+      },
+      {
+        id: "jugo-fresa-leche",
+        name: "Fresa con leche",
+        description: "Batido cremoso de fresas con leche.",
+        price: 8,
+      },
+      {
+        id: "jugo-lucuma-leche",
+        name: "Lúcuma con leche",
+        description: "Batido cremoso de lúcuma con leche.",
+        price: 8,
+      },
+      {
+        id: "jugo-guanabana-leche",
+        name: "Guanábana con leche",
+        description: "Batido cremoso de guanábana fresca con leche.",
+        price: 8,
+      },
+      {
+        id: "jugo-mango-leche",
+        name: "Mango con leche",
+        description: "Batido cremoso de mango con leche.",
+        price: 8,
+      },
+      {
+        id: "jugo-mix-al-gusto",
+        name: "Jugos Mix al gusto",
+        description: "Combinación de frutas a tu preferencia.",
+        price: 9,
+      },
+    ],
+  },
+
+  // ─── 11. BEBIDAS ──────────────────────────────────────────────────────────
+  {
+    id: "bebidas",
+    name: "Bebidas",
+    icon: "🍹",
+    subtitle: "Refrescos tradicionales y bebidas personales",
+    dishes: [
+      {
+        id: "cocona-1-litro",
+        name: "Cocona — 1 litro",
+        description: "Jarra de refresco natural de cocona de la selva (1 litro).",
+        price: 17,
+        tags: ["amazonico"],
+      },
+      {
+        id: "cocona-vaso",
+        name: "Cocona — Vaso",
+        description: "Vaso de refresco natural de cocona.",
+        price: 8,
+        tags: ["amazonico"],
+      },
+      {
+        id: "camu-camu-1-litro",
+        name: "Camu Camu — 1 litro",
+        description: "Jarra de refresco natural de camu camu amazónico (1 litro).",
+        price: 18,
+        tags: ["amazonico"],
+      },
+      {
+        id: "camu-camu-vaso",
+        name: "Camu Camu — Vaso",
+        description: "Vaso de refresco natural de camu camu.",
+        price: 8,
+        tags: ["amazonico"],
+      },
+      {
+        id: "chicha-morada-1-litro",
+        name: "Chicha Morada — 1 litro",
+        description: "Jarra de chicha morada tradicional preparada en casa (1 litro).",
+        price: 17,
+      },
+      {
+        id: "chicha-morada-vaso",
+        name: "Chicha Morada — Vaso",
+        description: "Vaso de chicha morada tradicional preparada en casa.",
+        price: 8,
+      },
+      {
+        id: "coca-cola-personal",
+        name: "Coca-Cola personal",
+        description: "Botella personal.",
+        price: 4,
+      },
+      {
+        id: "inca-kola-personal",
+        name: "Inca Kola personal",
+        description: "Botella personal.",
+        price: 4,
+      },
+      {
+        id: "agua-mineral",
+        name: "Agua mineral",
+        description: "Botella personal.",
+        price: 4,
+      },
+    ],
+  },
+
+  // ─── 12. FROZEN ───────────────────────────────────────────────────────────
+  {
+    id: "frozen",
+    name: "Frozen",
+    icon: "🍧",
+    subtitle: "Refrescos frozen granizados al momento",
+    dishes: [
+      {
+        id: "limonada-frozen-1-litro",
+        name: "Limonada Frozen — 1 litro",
+        description: "Limonada frozen granizada al punto (1 litro).",
+        price: 17,
+      },
+      {
+        id: "limonada-frozen-medio-litro",
+        name: "Limonada Frozen — ½ litro",
+        description: "Limonada frozen granizada al punto (½ litro).",
+        price: 9,
+      },
+      {
+        id: "maracuya-frozen-1-litro",
+        name: "Maracuyá Frozen — 1 litro",
+        description: "Maracuyá frozen granizado al punto (1 litro).",
+        price: 18,
+      },
+      {
+        id: "maracuya-frozen-medio-litro",
+        name: "Maracuyá Frozen — ½ litro",
+        description: "Maracuyá frozen granizado al punto (½ litro).",
+        price: 9,
+      },
+      {
+        id: "mango-frozen-1-litro",
+        name: "Mango Frozen — 1 litro",
+        description: "Mango frozen granizado al punto (1 litro).",
+        price: 18,
+      },
+      {
+        id: "mango-frozen-medio-litro",
+        name: "Mango Frozen — ½ litro",
+        description: "Mango frozen granizado al punto (½ litro).",
+        price: 9,
+      },
+      {
+        id: "fresa-frozen-1-litro",
+        name: "Fresa Frozen — 1 litro",
+        description: "Fresa frozen granizada al punto (1 litro).",
+        price: 18,
+      },
+      {
+        id: "fresa-frozen-medio-litro",
+        name: "Fresa Frozen — ½ litro",
+        description: "Fresa frozen granizada al punto (½ litro).",
+        price: 9,
+      },
+      {
+        id: "maracumango-frozen-1-litro",
+        name: "Maracumango Frozen — 1 litro",
+        description: "Maracuyá y mango frozen granizado (1 litro).",
+        price: 18,
+      },
+      {
+        id: "maracumango-frozen-medio-litro",
+        name: "Maracumango Frozen — ½ litro",
+        description: "Maracuyá y mango frozen granizado (½ litro).",
+        price: 9,
+      },
+    ],
+  },
+
+  // ─── 13. FRESH TEA ────────────────────────────────────────────────────────
+  {
+    id: "fresh-tea",
+    name: "Fresh Tea",
+    icon: "🍃",
+    subtitle: "Tés fríos e infusiones refrescantes",
+    dishes: [
+      {
+        id: "fresh-tea-negro-clasico",
+        name: "Negro Clásico",
+        description: "Té negro frío tradicional.",
+        price: 8,
+      },
+      {
+        id: "fresh-tea-pina-jengibre",
+        name: "Piña y Jengibre",
+        description: "Té frío con infusión de piña y jengibre.",
+        price: 9,
+      },
+      {
+        id: "fresh-tea-maracuya",
+        name: "Maracuyá",
+        description: "Té frío con pulpa natural de maracuyá.",
+        price: 9,
+      },
+      {
+        id: "fresh-tea-fresa",
+        name: "Fresa",
+        description: "Té frío con esencia y trozos de fresa.",
+        price: 10,
+      },
+      {
+        id: "fresh-tea-limon-miel",
+        name: "Limón y Miel",
+        description: "Té frío con jugo de limón y miel de abeja.",
+        price: 10,
+      },
+      {
+        id: "fresh-tea-menta-jengibre",
+        name: "Menta y Jengibre",
+        description: "Té frío con hojas de menta y jengibre fresco.",
+        price: 10,
+      },
+      {
+        id: "fresh-tea-mango",
+        name: "Mango",
+        description: "Té frío con pulpa natural de mango.",
+        price: 10,
+      },
+    ],
+  },
+
+  // ─── 14. FRAPPÉS ──────────────────────────────────────────────────────────
+  {
+    id: "frappes",
+    name: "Frappés",
+    icon: "☕",
+    subtitle: "Frappés cremosos y batidos especiales",
+    dishes: [
+      {
+        id: "frappe-clasico",
+        name: "Frappé clásico",
+        description: "Frappé cremoso tradicional batido con hielo.",
+        price: 13,
+      },
+      {
+        id: "frappe-pina",
+        name: "Frappé de Piña",
+        description: "Frappé refrescante de piña natural.",
+        price: 13,
+      },
+      {
+        id: "frappe-fresa",
+        name: "Frappé de Fresa",
+        description: "Frappé cremoso batido con fresas selectas.",
+        price: 13,
+      },
+      {
+        id: "frappe-mango",
+        name: "Frappé de Mango",
+        description: "Frappé cremoso con pulpa de mango.",
+        price: 14,
+      },
+      {
+        id: "frappe-oreo",
+        name: "Frappé Oreo",
+        description: "Frappé cremoso con galletas Oreo y toque dulce.",
+        price: 15,
+      },
+      {
+        id: "frappe-lucuma",
+        name: "Frappé de Lúcuma",
+        description: "Frappé cremoso con pulpa de lúcuma.",
+        price: 15,
+      },
+      {
+        id: "frappe-protein-fit",
+        name: "Frappé Protein-Fit",
+        description: "Frappé Protein-Fit.",
+        price: 16,
       },
     ],
   },
 ];
-
-
