@@ -26,91 +26,100 @@ export default function Footer() {
   const year = 2026;
 
   return (
-    <footer className="bg-tunche-surface border-t border-tunche-border px-6 py-8" role="contentinfo">
-      {/* Logo & brand */}
-      <div className="flex flex-col items-center text-center mb-6">
-        <Image
-          src="/img/logo.webp"
-          alt="La Esquina del Tunche"
-          width={56}
-          height={56}
-          className="rounded-full border border-tunche-gold/30 mb-3"
-        />
-        <h2 className="font-display text-tunche-cream text-base font-bold">La Esquina del Tunche</h2>
-        <p className="text-tunche-muted text-xs mt-0.5">{config.slogan}</p>
-      </div>
+    <footer className="site-footer border-t border-tunche-border bg-tunche-surface" role="contentinfo">
+      <div className="site-footer-inner">
+        <div className="site-footer-grid">
+          {/* Logo & brand */}
+          <div className="site-footer-brand">
+            <Image
+              src="/img/logo.webp"
+              alt="La Esquina del Tunche"
+              width={56}
+              height={56}
+              className="site-footer-logo rounded-full border border-tunche-gold/30"
+            />
+            <h2 className="font-display text-base font-bold text-tunche-cream">La Esquina del Tunche</h2>
+            <p className="site-footer-tagline text-xs text-tunche-muted">{config.slogan}</p>
+          </div>
 
-      {/* Info grid */}
-      <div className="flex flex-col gap-2 text-center mb-6">
-        {config.schedule && !config.schedule.startsWith("TODO") && (
-          <p className="text-tunche-muted text-sm">
-            <span className="text-tunche-cream font-medium">Horario:</span> {config.schedule}
+          {/* Contact information */}
+          <div className="site-footer-contact">
+            {config.schedule && !config.schedule.startsWith("TODO") && (
+              <p className="text-sm text-tunche-muted">
+                <span className="font-medium text-tunche-cream">Horario:</span> {config.schedule}
+              </p>
+            )}
+            {config.address && !config.address.startsWith("TODO") && (
+              <p className="text-sm text-tunche-muted">
+                <span className="font-medium text-tunche-cream">Dirección:</span> {config.address}
+              </p>
+            )}
+            <p className="text-sm text-tunche-muted">
+              <span className="font-medium text-tunche-cream">WhatsApp:</span>{" "}
+              <a
+                href={`https://wa.me/${config.whatsapp}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-sm text-tunche-gold underline-offset-4 transition-colors duration-200 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-tunche-gold"
+              >
+                {config.whatsappDisplay}
+              </a>
+            </p>
+          </div>
+
+          {/* Social links */}
+          <div className="site-footer-social">
+            {config.social.facebook && (
+              <a
+                href={config.social.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex size-11 items-center justify-center rounded-full border border-tunche-border bg-tunche-surface-2 text-tunche-muted transition-colors duration-200 hover:border-[#1877F2]/40 hover:text-[#1877F2] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-tunche-gold"
+                aria-label="Síguenos en Facebook"
+              >
+                <FacebookIcon />
+              </a>
+            )}
+            {config.social.tiktok && (
+              <a
+                href={config.social.tiktok}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex size-11 items-center justify-center rounded-full border border-tunche-border bg-tunche-surface-2 text-tunche-muted transition-colors duration-200 hover:border-white/30 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-tunche-gold"
+                aria-label="Síguenos en TikTok"
+              >
+                <TikTokIcon />
+              </a>
+            )}
+            {config.social.instagram && (
+              <a
+                href={config.social.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex size-11 items-center justify-center rounded-full border border-tunche-border bg-tunche-surface-2 text-tunche-muted transition-colors duration-200 hover:border-[#E1306C]/40 hover:text-[#E1306C] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-tunche-gold"
+                aria-label="Síguenos en Instagram"
+              >
+                <InstagramIcon />
+              </a>
+            )}
+          </div>
+        </div>
+
+        <div className="site-footer-credit border-t border-tunche-border">
+          <p className="text-center text-xs text-tunche-muted/60">
+            Carta digital por{" "}
+            <a
+              href="https://www.linkedin.com/in/reiner-jairo-jim%C3%A9nez-huaman-9234a9388"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-sm text-tunche-muted underline decoration-tunche-muted/50 underline-offset-4 transition-colors duration-200 hover:text-tunche-cream focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-tunche-gold"
+            >
+              Reiner Jimenez
+            </a>{" "}
+            · {year}
           </p>
-        )}
-        {config.address && !config.address.startsWith("TODO") && (
-          <p className="text-tunche-muted text-sm">
-            <span className="text-tunche-cream font-medium">Dirección:</span> {config.address}
-          </p>
-        )}
-        <p className="text-tunche-muted text-sm">
-          <span className="text-tunche-cream font-medium">WhatsApp:</span>{" "}
-          <a
-            href={`https://wa.me/${config.whatsapp}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-tunche-gold hover:underline"
-          >
-            {config.whatsappDisplay}
-          </a>
-        </p>
+        </div>
       </div>
-
-      {/* Social links */}
-      <div className="flex items-center justify-center gap-3 mb-6">
-        {config.social.facebook && (
-          <a
-            href={config.social.facebook}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-10 h-10 flex items-center justify-center rounded-full bg-tunche-surface-2 border border-tunche-border text-tunche-muted hover:text-[#1877F2] hover:border-[#1877F2]/40 transition-all"
-            aria-label="Síguenos en Facebook"
-          >
-            <FacebookIcon />
-          </a>
-        )}
-        {config.social.tiktok && (
-          <a
-            href={config.social.tiktok}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-10 h-10 flex items-center justify-center rounded-full bg-tunche-surface-2 border border-tunche-border text-tunche-muted hover:text-white hover:border-white/30 transition-all"
-            aria-label="Síguenos en TikTok"
-          >
-            <TikTokIcon />
-          </a>
-        )}
-        {config.social.instagram && (
-          <a
-            href={config.social.instagram}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-10 h-10 flex items-center justify-center rounded-full bg-tunche-surface-2 border border-tunche-border text-tunche-muted hover:text-[#E1306C] hover:border-[#E1306C]/40 transition-all"
-            aria-label="Síguenos en Instagram"
-          >
-            <InstagramIcon />
-          </a>
-        )}
-      </div>
-
-      {/* Divider */}
-      <div className="border-t border-tunche-border mb-4" />
-
-      {/* Credit */}
-      <p className="text-center text-tunche-muted/50 text-xs">
-        Carta digital por{" "}
-        <span className="text-tunche-muted">R.DEV</span>
-        {" "}· {year}
-      </p>
     </footer>
   );
 }

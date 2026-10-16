@@ -100,6 +100,81 @@ body {
   overflow-x: hidden;
 }
 
+/* Footer spacing lives after the global reset so it cannot be zeroed out. */
+.site-footer {
+  padding: 32px 16px;
+}
+
+.site-footer-inner {
+  width: 100%;
+  max-width: 1024px;
+  margin-inline: auto;
+}
+
+.site-footer-grid {
+  display: grid;
+  align-items: center;
+  gap: 28px;
+  text-align: center;
+}
+
+.site-footer-brand {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: center;
+}
+
+.site-footer-logo {
+  margin-bottom: 12px;
+}
+
+.site-footer-tagline {
+  margin-top: 2px;
+}
+
+.site-footer-contact {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.site-footer-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.site-footer-credit {
+  margin-top: 28px;
+  padding-top: 16px;
+}
+
+@media (min-width: 640px) {
+  .site-footer {
+    padding-inline: 24px;
+  }
+
+  .site-footer-grid {
+    grid-template-columns: minmax(12rem, 1fr) minmax(14rem, 1.2fr) auto;
+    text-align: left;
+  }
+
+  .site-footer-brand {
+    align-items: flex-start;
+  }
+
+  .site-footer-contact {
+    text-align: center;
+  }
+
+  .site-footer-social {
+    justify-content: flex-end;
+  }
+}
+
 /* Mobile max-width container for desktop */
 .app-container {
   max-width: 480px;
