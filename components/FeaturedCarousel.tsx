@@ -97,6 +97,7 @@ export default function FeaturedCarousel({ dishes, onDishClick }: FeaturedCarous
                     src={dish.image}
                     alt={dish.name}
                     fill
+                    sizes="192px"
                     className="absolute inset-0"
                   />
                   {/* Tag badge */}

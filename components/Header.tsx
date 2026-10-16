@@ -42,7 +42,6 @@ export default function Header({ searchQuery, onSearch }: HeaderProps) {
               width={40}
               height={40}
               className="rounded-full border border-tunche-gold/30 shadow-md"
-              priority
             />
           </div>
         )}

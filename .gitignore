@@ -12,6 +12,7 @@
 
 # testing
 /coverage
+/.perf-edge-profile/
 
 # next.js
 /.next/

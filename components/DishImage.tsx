@@ -9,6 +9,7 @@ type DishImageProps = {
   className?: string;
   priority?: boolean;
   fill?: boolean;
+  sizes?: string;
   type?:
     | "desayunos"
     | "poke-bowls"
@@ -60,7 +61,15 @@ const categoryIcons: Record<string, string> = {
   "frappes":          "☕",
 };
 
-export default function DishImage({ src, alt, className = "", priority = false, fill = false, type }: DishImageProps) {
+export default function DishImage({
+  src,
+  alt,
+  className = "",
+  priority = false,
+  fill = false,
+  sizes = "(max-width: 480px) 100vw, 480px",
+  type,
+}: DishImageProps) {
   const [error, setError] = useState(false);
 
   const gradient = type ? categoryGradients[type] : "from-green-900/80 to-amber-900/60";
@@ -86,7 +95,7 @@ export default function DishImage({ src, alt, className = "", priority = false, 
           alt={alt}
           fill
           className="object-cover"
-          sizes="(max-width: 480px) 100vw, 480px"
+          sizes={sizes}
           priority={priority}
           onError={() => setError(true)}
         />
@@ -101,7 +110,7 @@ export default function DishImage({ src, alt, className = "", priority = false, 
       width={400}
       height={300}
       className={`object-cover ${className}`}
-      sizes="(max-width: 480px) 100vw, 480px"
+      sizes={sizes}
       priority={priority}
       onError={() => setError(true)}
     />

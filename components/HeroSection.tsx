@@ -18,7 +18,7 @@ export default function HeroSection() {
           alt="Platos de La Esquina del Tunche"
           fill
           className="object-cover"
-          priority
+          preload
           sizes="(max-width: 480px) 100vw, 480px"
         />
         <div className="hero-overlay absolute inset-0" />
@@ -37,7 +37,6 @@ export default function HeroSection() {
                 width={112}
                 height={112}
                 className="object-cover"
-                priority
               />
             </div>
           </div>

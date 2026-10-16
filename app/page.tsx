@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import { menu, Dish, Category } from "@/data/menu";
 import { config } from "@/data/config";
 import Header from "@/components/Header";
@@ -23,6 +23,28 @@ function normalize(str: string): string {
     .replace(/[\u0300-\u036f]/g, "");
 }
 
+const dishesById = new Map(
+  menu.flatMap((category) => category.dishes.map((dish) => [dish.id, dish] as const))
+);
+
+const featuredDishes: Dish[] = config.featured.flatMap((id) => {
+  const dish = dishesById.get(id);
+  return dish ? [dish] : [];
+});
+
+const searchableDishFields = new Map(
+  menu.flatMap((category) =>
+    category.dishes.map((dish) => [
+      dish.id,
+      [
+        normalize(dish.name),
+        ...(dish.description ? [normalize(dish.description)] : []),
+        ...(dish.variants?.map((variant) => normalize(variant.name)) ?? []),
+      ],
+    ] as const)
+  )
+);
+
 export default function HomePage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState(menu[0]?.id ?? "");
@@ -31,27 +53,20 @@ export default function HomePage() {
   const sectionRefs = useRef<Map<string, HTMLElement>>(new Map());
   const isScrollingRef = useRef(false);
 
-  // Build featured dishes list
-  const featuredDishes: Dish[] = config.featured.flatMap((id) =>
-    menu.flatMap((cat) => cat.dishes.filter((d) => d.id === id))
-  );
-
   // Filter menu for search
-  const filteredMenu: Category[] = searchQuery
-    ? menu
-        .map((cat) => ({
-          ...cat,
-          dishes: cat.dishes.filter((d) => {
-            const q = normalize(searchQuery);
-            return (
-              normalize(d.name).includes(q) ||
-              (d.description && normalize(d.description).includes(q)) ||
-              d.variants?.some((variant) => normalize(variant.name).includes(q))
-            );
-          }),
-        }))
-        .filter((cat) => cat.dishes.length > 0)
-    : menu;
+  const filteredMenu: Category[] = useMemo(() => {
+    if (!searchQuery) return menu;
+
+    const query = normalize(searchQuery);
+    return menu
+      .map((category) => ({
+        ...category,
+        dishes: category.dishes.filter((dish) =>
+          searchableDishFields.get(dish.id)?.some((field) => field.includes(query))
+        ),
+      }))
+      .filter((category) => category.dishes.length > 0);
+  }, [searchQuery]);
 
   // Scroll to category section
   const scrollToCategory = useCallback((id: string) => {
@@ -70,22 +85,36 @@ export default function HomePage() {
   useEffect(() => {
     if (searchQuery) return; // don't spy during search
 
-    const handleScroll = () => {
-      if (isScrollingRef.current) return;
-      const offset = 140;
-      let currentId = menu[0]?.id ?? "";
+    let animationFrame: number | null = null;
 
-      for (const [id, el] of sectionRefs.current) {
-        const rect = el.getBoundingClientRect();
-        if (rect.top <= offset) {
-          currentId = id;
+    const updateActiveCategory = () => {
+      animationFrame = null;
+      if (!isScrollingRef.current) {
+        const offset = 140;
+        let currentId = menu[0]?.id ?? "";
+
+        for (const [id, el] of sectionRefs.current) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= offset) {
+            currentId = id;
+          }
         }
+
+        setActiveCategory((previousId) => previousId === currentId ? previousId : currentId);
       }
-      setActiveCategory(currentId);
+    };
+
+    const handleScroll = () => {
+      if (animationFrame === null) {
+        animationFrame = window.requestAnimationFrame(updateActiveCategory);
+      }
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (animationFrame !== null) window.cancelAnimationFrame(animationFrame);
+    };
   }, [searchQuery]);
 
   const handleDishClick = (dish: Dish, categoryId?: string) => {
